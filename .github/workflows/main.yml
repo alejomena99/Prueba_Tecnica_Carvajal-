@@ -17,7 +17,12 @@ jobs:
       uses: cschleiden/replace-tokens@v1.3
       with:
         files: ${{ github.workspace }}/weather-app-main/env.js
-          
+
+    - name: npm install
+      run: |
+        cd ${{ github.workspace }}/weather-app-main
+        cat env.js
+        
     - name: npm install
       run: |
         node -v
