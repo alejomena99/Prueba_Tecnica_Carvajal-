@@ -1,0 +1,6 @@
+deploy:
+  podName: weather-pod
+  svcName: weather-svc
+  app: weather-app
+  imageName: alejomena99/weather-nginx-front
+  imageTag: latest

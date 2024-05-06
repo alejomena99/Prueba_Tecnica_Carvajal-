@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{.Values.deploy.svcName}}
+spec:
+  selector:
+    app: {{.Values.deploy.app}}
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 3000

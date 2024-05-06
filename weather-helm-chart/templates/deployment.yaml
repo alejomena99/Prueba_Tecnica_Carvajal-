@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{.Values.deploy.podName}}
+  labels:
+    app: {{.Values.deploy.podName}}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{.Values.deploy.app}}
+  template:
+    metadata:
+      labels:
+        app: {{.Values.deploy.app}}
+    spec:
+      containers:
+      - name: weather-container
+        image: {{.Values.deploy.imageName}}:{{.Values.deploy.imageTag}}
+        ports:
+        - containerPort: 8080  
