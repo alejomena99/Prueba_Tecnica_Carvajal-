@@ -55,12 +55,12 @@ jobs:
       uses: actions/download-artifact@v2.0.5
       with:
         name: Drop
-        path: ${{ github.workspace }}/build
+        path: ${{ github.workspace }}/dist
         
     - name: Move drop
       run: |
         tree
-        mv ${{ github.workspace }}/Drop ${{ github.workspace }}/weather-app-main
+        mv ${{ github.workspace }}/dist ${{ github.workspace }}/weather-app-main
 
         
     - name: Docker build and push
