@@ -26,5 +26,10 @@ jobs:
         npm run build
         cd ..
         tree
-
+        
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.2
+      with:
+        name: 'Drop'
+        path: '${{ github.workspace }}/weather-app-main/dist'
           
