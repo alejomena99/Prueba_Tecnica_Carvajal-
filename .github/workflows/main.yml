@@ -15,7 +15,7 @@ jobs:
       
     - name: Replace token
       run: |
-        sed -i "s/#{OTHER_KEY}#/${{ secret.API_KEY }}/g" ${{ github.workspace }}/weather-app-main/env.js
+        sed -i "s/#{OTHER_KEY}#/${{ secrets.API_KEY }}/g" ${{ github.workspace }}/weather-app-main/env.js
   
     - name: npm install
       run: |
@@ -55,7 +55,7 @@ jobs:
         
     - name: npm run build
       run: |
-        docker login -u ${{ secret.DOCKERHUB_USER }} -p ${{ secret.DOCKERHUB_KEY }}
+        docker login -u ${{ secrets.DOCKERHUB_USER }} -p ${{ secrets.DOCKERHUB_KEY }}
         cd ${{ github.workspace }}/weather-app-main
         docker build -t weather/nginx-front:latest .
         docker ps
