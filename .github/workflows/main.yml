@@ -59,6 +59,7 @@ jobs:
         
     - name: Move drop
       run: |
+        tree
         mv ${{ github.workspace }}/Drop ${{ github.workspace }}/weather-app-main
 
         
