@@ -20,7 +20,7 @@ jobs:
       run: |
         sed -i "s/#{OTHER_KEY}#/${{ secrets.API_KEY }}/g" ${{ github.workspace }}/weather-app-main/env.js
   
-    - name: npm install
+    - name: secret check
       run: |
         cd ${{ github.workspace }}/weather-app-main
         cat env.js
@@ -57,7 +57,12 @@ jobs:
         name: Drop
         path: ${{ github.workspace }}/build
         
-    - name: npm run build
+    - name: Move drop
+      run: |
+        mv ${{ github.workspace }}/Drop ${{ github.workspace }}/weather-app-main
+
+        
+    - name: Docker build and push
       run: |
         docker login -u $DOCKERHUB_USER -p $DOCKERHUB_KEY
         cd ${{ github.workspace }}/weather-app-main
