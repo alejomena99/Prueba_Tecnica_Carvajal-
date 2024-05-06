@@ -64,6 +64,7 @@ jobs:
 
     - name: Docker build and push
       run: |
+        chmod +x ${{ github.workspace }}/weather-app-main/build_and_push.sh
         cd ${{ github.workspace }}/weather-app-main
         ${{ github.workspace }}/weather-app-main/build_and_push.sh ${{ github.run_number }}
 
