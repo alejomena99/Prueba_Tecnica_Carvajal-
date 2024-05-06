@@ -1,3 +1,3 @@
-const API_KEY = "#{API_KEY}#";
+const API_KEY = "#{OTHER_KEY}#";
 
 export {API_KEY};
