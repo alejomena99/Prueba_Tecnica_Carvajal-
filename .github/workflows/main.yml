@@ -13,11 +13,10 @@ jobs:
     - name: Tree
       run: tree
       
-    - name: Replace tokens
-      uses: cschleiden/replace-tokens@v1.3
-      with:
-        files: ${{ github.workspace }}/weather-app-main/env.js
-
+    - name: Replace token
+      run: |
+        sed -i "s/#{OTHER_KEY}#/${{ secret.API_KEY }}/g" ${{ github.workspace }}/weather-app-main/env.js
+  
     - name: npm install
       run: |
         cd ${{ github.workspace }}/weather-app-main
@@ -42,4 +41,25 @@ jobs:
       with:
         name: 'Drop'
         path: '${{ github.workspace }}/weather-app-main/dist'
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Download Build Artifact
+      uses: actions/download-artifact@v2.0.5
+      with:
+        name: Drop
+        path: ${{ github.workspace }}/build
+        
+    - name: npm run build
+      run: |
+        docker login -u ${{ secret.DOCKERHUB_USER }} -p ${{ secret.DOCKERHUB_KEY }}
+        cd ${{ github.workspace }}/weather-app-main
+        docker build -t weather/nginx-front:latest .
+        docker ps
+        docker push weather/nginx-front:latest
+
+
           
