@@ -12,7 +12,12 @@ jobs:
 
     - name: Tree
       run: tree
-
+      
+    - name: Replace tokens
+      uses: cschleiden/replace-tokens@v1.3
+      with:
+        files: ${{ github.workspace }}/weather-app-main/env.js
+          
     - name: npm install
       run: |
         node -v
