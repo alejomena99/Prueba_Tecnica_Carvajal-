@@ -13,3 +13,14 @@ jobs:
     - name: Tree
       run: tree
 
+    - name: npm install
+      run: |
+        node -v
+        npm -version
+        cd ${{ github.workspace }}/weather-app-main
+        npm install
+        cd ..
+        tree
+        
+
+          
