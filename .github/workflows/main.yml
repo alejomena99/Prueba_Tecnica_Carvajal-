@@ -19,8 +19,12 @@ jobs:
         npm -version
         cd ${{ github.workspace }}/weather-app-main
         npm install
+        
+    - name: npm run build
+      run: |
+        cd ${{ github.workspace }}/weather-app-main
+        npm run build
         cd ..
         tree
-        
 
           
