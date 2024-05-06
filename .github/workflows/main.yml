@@ -6,6 +6,9 @@ on:
 jobs:
 
   build:
+    env:
+      DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
+      DOCKERHUB_KEY: ${{ secrets.DOCKERHUB_KEY }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -56,7 +59,7 @@ jobs:
         
     - name: npm run build
       run: |
-        docker login -u ${{ secrets.DOCKERHUB_USER }} -p ${{ secrets.DOCKERHUB_KEY }}
+        docker login -u $DOCKERHUB_USER -p $DOCKERHUB_KEY
         cd ${{ github.workspace }}/weather-app-main
         docker build -t weather/nginx-front:latest .
         docker ps
