@@ -62,14 +62,13 @@ jobs:
         tree
         mv ${{ github.workspace }}/dist ${{ github.workspace }}/weather-app-main
 
-        
     - name: Docker build and push
       run: |
         docker login -u $DOCKERHUB_USER -p $DOCKERHUB_KEY
         cd ${{ github.workspace }}/weather-app-main
-        docker build -t weather/nginx-front:latest .
+        docker build -t $DOCKERHUB_USER/weather-nginx-front:latest .
         docker ps
-        docker push weather/nginx-front:latest
+        docker push $DOCKERHUB_USER/weather-nginx-front:latest 
 
 
           
