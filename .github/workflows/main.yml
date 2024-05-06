@@ -64,11 +64,9 @@ jobs:
 
     - name: Docker build and push
       run: |
-        docker login -u $DOCKERHUB_USER -p $DOCKERHUB_KEY
         cd ${{ github.workspace }}/weather-app-main
-        docker build -t $DOCKERHUB_USER/weather-nginx-front:${{ github.run_number }} .
-        docker ps
-        docker push $DOCKERHUB_USER/weather-nginx-front:${{ github.run_number }}
+        /${{ github.workspace }}/weather-app-main/build_and_push.sh ${{ github.run_number }}
+
 
 
           
