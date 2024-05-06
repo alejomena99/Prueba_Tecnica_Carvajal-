@@ -1,0 +1,15 @@
+# Imagen base
+FROM nginx
+
+# # Copiar la configuración de NGINX
+COPY nginx.conf /etc/nginx
+COPY my-site /etc/nginx/sites-enabled/
+
+# Copiar los archivos de la carpeta "build" al directorio de trabajo de NGINX
+COPY dist /usr/share/nginx/html/
+
+# Exponer el puerto 3000
+EXPOSE 3000
+
+# Comando para iniciar NGINX
+CMD ["nginx", "-g", "daemon off;"]

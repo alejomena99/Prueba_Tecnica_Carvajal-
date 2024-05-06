@@ -1,0 +1,96 @@
+
+.container {
+  min-height: 100vh; /* Set a specific minimum height */
+  background-color: #ffffff; /* Dark background color */
+  color: #fff; /* Light text color */
+}
+
+.title {
+  display: flex; /* Usa flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  text-align: center;
+  border-radius: 80px;
+  margin-bottom: 50px; /* Margen inferior para crear espacio */
+  font-family: "Verdana"; /* Cambia "Arial" por la fuente que desees */
+  background-color: hsl(237, 20%, 18%); /* Color de fondo hueso */
+  width: 90%; /* Ancho del encabezado */
+  height: 100px;
+  margin: 0 auto; /* Centra el encabezado horizontalmente */
+}
+
+.blank {
+  height: 20px;
+}
+.search-bar {
+  margin-right: auto;
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.label-left {
+  font-weight: lighter;
+  color: #000000; /* Light text color */
+  padding: 8px;
+  float: left; /* Posiciona el elemento a la derecha */
+  margin-left: 20px; /* Agrega un margen de 5px a la derecha */
+}
+.label-right {
+  font-weight: lighter;
+  color: #000000; /* Light text color */
+  padding: 8px;
+  float: right; /* Posiciona el elemento a la derecha */
+  margin-right: 20px; /* Agrega un margen de 5px a la derecha */
+}
+
+.input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 200px;
+  background-color: #555; /* Dark input background color */
+  color: #fff; /* Light text color */
+}
+
+.select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 200px;
+  background-color: #555; /* Color de fondo oscuro */
+  color: #fff; /* Color de texto claro */
+  float: right; /* Posiciona el elemento a la derecha */
+  margin-right: 20px; /* Agrega un margen de 5px a la derecha */
+}
+
+
+.button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 15px;
+  background-color: #013f83; /* Primary button color */
+  color: #fff; /* Light text color */
+  cursor: pointer;
+  width: 30%;
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker hover color */
+}
+
+.weather-info{
+  border: 2px solid #ccc; /* Borde sólido de 2px de ancho */
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  color: #000000; /* Light text color */
+  width: 60%; /* Ancho del encabezado */
+  margin-left: 150px; /* Agrega un margen de 5px a la derecha */
+}
+
+.content-group{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
