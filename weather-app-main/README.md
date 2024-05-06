@@ -1,5 +1,5 @@
 <div align="justify">
-# DOCUMENTACIÓN
+#DOCUMENTACIÓN
 
 Esta es la documentación relacionada con el desafío #1 de la prueba técnica de Carvajal para el puesto de Ingeniero DevOps Senior.
 
